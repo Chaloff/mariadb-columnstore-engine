@@ -74,7 +74,7 @@ IDB_Decimal Func_mod::getDecimalVal(Row& row, FunctionParm& parm, bool& isNull,
     // or divisor has no scale
     if (!div.isScaled())
     {
-      return IDB_Decimal(d % div.toTSInt128(), d.scale, datatypes::INT128MAXPRECISION);
+      return IDB_Decimal(d.toTSInt128() % div.toTSInt128(), d.scale, datatypes::INT128MAXPRECISION);
     }
     // float division
     else
